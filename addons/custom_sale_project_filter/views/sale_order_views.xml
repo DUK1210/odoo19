@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_order_form_view_project_filter" model="ir.ui.view">
+        <field name="name">sale.order.form.project.filter</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <!-- Cập nhật domain cho field product_id trên order line -->
+            <xpath expr="//field[@name='order_line']//field[@name='product_id']" position="attributes">
+                <attribute name="domain">[('sale_ok','=',True), '|', ('product_tmpl_id.filter_project_id', '=', parent.project_id), ('product_tmpl_id.filter_project_id', '=', False)]</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']//field[@name='product_template_id']" position="attributes">
+                <attribute name="domain">[('sale_ok','=',True), '|', ('filter_project_id', '=', parent.project_id), ('filter_project_id', '=', False)]</attribute>
+            </xpath>
+            
+        </field>
+    </record>
+</odoo>

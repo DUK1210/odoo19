@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Mở form product.template để thêm field project_id -->
+    <record id="product_template_form_view_project_filter" model="ir.ui.view">
+        <field name="name">product.template.form.project.filter</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='categ_id']" position="after">
+                <field name="filter_project_id"/>
+            </xpath>
+        </field>
+    </record>
+    
+    <!-- Mở form product.product để thêm field project_id (tuỳ chọn) -->
+    <record id="product_normal_form_view_project_filter" model="ir.ui.view">
+        <field name="name">product.product.form.project.filter</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='categ_id']" position="after">
+                <field name="filter_project_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Thay đổi view search mặc định của product để có thể filter/group theo project.
+         Note: Bỏ qua nếu chưa cần thiết -->
+    <!--
+    <record id="product_template_search_view_project_filter" model="ir.ui.view">
+        <field name="name">product.template.search.project.filter</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <field name="project_id"/>
+                <filter string="Dự án" name="groupby_project" context="{'group_by':'project_id'}"/>
+            </xpath>
+        </field>
+    </record>
+    -->
+</odoo>
