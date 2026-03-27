@@ -1,0 +1,20 @@
+<form style="display: unset !important" create="0" js_class="loilv_report_advanced_form">
+    <sheet>
+        <group>
+            <group>
+                %s
+            </group>
+            <group>
+                %s
+            </group>
+        </group>
+        <div class="text-center">
+            <div t-on-click="downloadData" class="btn btn-primary export-excel-js"><i class="fa fa-file-excel-o"/> Tải về</div>
+            <span style="margin: 0 5px;"/>
+            <div t-on-click="previewData" class="btn btn-secondary preview-excel-js"><i class="fa fa-bar-chart"/> Xem Trước</div>
+        </div>
+    </sheet>
+    <div class="container-fluid wrapper-table-preview">
+        <table id="table-preview" class="display table-responsive"></table>
+    </div>
+</form>

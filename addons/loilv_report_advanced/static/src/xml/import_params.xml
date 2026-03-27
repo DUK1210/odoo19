@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="loilv_report_advanced.ExcelMany2Many" owl="1">
+        <div
+            class="o_field_tags d-inline-flex flex-wrap"
+            t-att-class="{'o_tags_input o_input': !props.readonly}"
+            t-if="!state.isImport"
+        >
+            <TagsList tags="tags"/>
+            <div t-if="showM2OSelectionField" class="o_field_many2many_selection d-inline-flex w-100" t-on-keydown="onAutoCompleteKeydown" t-ref="autoComplete">
+                <Many2XAutocomplete
+                    id="props.id"
+                    placeholder="tags.length ? '' : props.placeholder"
+                    resModel="props.relation"
+                    autoSelect="true"
+                    fieldString="string"
+                    activeActions="activeActions"
+                    update="update"
+                    quickCreate="activeActions.create ? quickCreate : null"
+                    context="context"
+                    getDomain.bind="getDomain"
+                    isToMany="true"
+                    nameCreateField="props.nameCreateField"
+                />
+            </div>
+        </div>
+        <div t-if="state.isImport"><p><b><t t-esc="state.countRecord"/></b> bản ghi</p></div>
+        <div class="o_excel_upload">
+            <div class="o_input_file_container" style="display: flex;">
+                <div class="file-input">
+                  <input
+                    type="file"
+                    name="file-input"
+                    id="file-input"
+                    class="file-input__input"
+                    accept=".xlsx,.xls"
+                    t-on-change="onFileChange"
+                    t-att-disabled="state.loading"
+                  />
+                  <label class="file-input__label" for="file-input">
+                    <i class="fa fa-upload"/>
+                    <span>Upload file</span></label
+                  >
+                </div>
+                <button
+                    class="btn btn-sm"
+                    t-on-click="downloadTemplate"
+                    t-att-disabled="state.loading"
+                >
+                    <i class="fa fa-download"/> Download Template
+                </button>
+                <button class="btn btn-sm" t-on-click="btnRemoveValue">
+                    <i class="fa fa-trash-o"/> Xóa
+                </button>
+            </div>
+
+            <div t-if="state.error" class="alert alert-danger mt-2">
+                <t t-esc="state.error"/>
+            </div>
+
+            <!-- Display current values if needed -->
+            <div t-if="props.record.data[props.name]" class="mt-2">
+                <div class="o_field_many2many"/>
+            </div>
+        </div>
+    </t>
+</templates>

@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_loilv.base.report,loilv.base.report,model_loilv_base_report,base.group_user,1,1,1,1
+access_loilv.report.list,loilv.report.list,model_loilv_report_list,base.group_user,1,1,1,1
+access_loilv.report.setup.parameter,loilv.report.setup.parameter,model_loilv_report_setup_parameter,base.group_user,1,1,1,1
+access_loilv.report.access,loilv.report.access,model_loilv_report_access,base.group_user,1,1,1,1
+access_loilv.report.setup.parameter.selection,loilv.report.setup.parameter.selection,model_loilv_report_setup_parameter_selection,base.group_user,1,1,1,1
+access_status.group,status.group,model_status_group,base.group_user,1,1,1,1

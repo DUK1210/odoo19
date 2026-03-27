@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="loilv_report_list_view_tree" model="ir.ui.view">
+            <field name="name">loilv_report_list_view_tree</field>
+            <field name="model">loilv.report.list</field>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <list string="loilv_report_list_tree">
+                    <field name="name"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="loilv_report_list_view_tree_public" model="ir.ui.view">
+            <field name="name">loilv_report_list_view_tree</field>
+            <field name="model">loilv.report.list</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <list string="loilv_report_list_tree" editable="bottom" create="false" edit="false" delete="false">
+                    <field name="name" readonly="True"/>
+                    <field name="report_type" readonly="True"/>
+                    <button name="view_report" class="oe_highlight" type="object" string="Lấy báo cáo"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="loilv_report_list_view_view_form_query" model="ir.ui.view">
+            <field name="name">loilv_report_list_view_view_form</field>
+            <field name="model">loilv.report.list</field>
+            <field name="arch" type="xml">
+                <form string="loilv_report_list_view_form">
+                    <field name="query_string" style="font-size: 20px" widget="ace" options="{'mode': 'python'}"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="loilv_report_list_view_view_form_json" model="ir.ui.view">
+            <field name="name">loilv_report_list_view_view_form</field>
+            <field name="model">loilv.report.list</field>
+            <field name="arch" type="xml">
+                <form string="loilv_report_list_view_form">
+                    <field name="title_json" widget="ace" options="{'mode': 'python'}" style="font-size: 20px"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="loilv_report_list_view_form" model="ir.ui.view">
+            <field name="name">loilv_report_list_view_form</field>
+            <field name="model">loilv.report.list</field>
+            <field name="arch" type="xml">
+                <form string="loilv_report_list_form">
+                    <header>
+                        <button name="confirm" string="Tạo báo cáo" type="object"/>
+                        <button name="view_report" string="Xem" type="object"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="model_name"/>
+                                <field name="report_type"/>
+                                <field name="limit"/>
+                                <field name="version2"/>
+                            </group>
+                        </group>
+                        <button name="write_query_string" type="object" string="Cấu hình Query"/>
+                        <button name="write_title_excel" type="object" string="Cấu hình Tiêu đề"/>
+                        <notebook>
+                            <page string="Cấu hình đầu vào">
+                                <field name="setup_params">
+                                    <list>
+                                        <field name="name"/>
+                                        <field name="description"/>
+                                        <field name="ttype"/>
+                                        <field name="required"/>
+                                        <field name="group"/>
+                                    </list>
+                                    <form string="setup_params_form">
+                                        <sheet>
+                                            <group>
+                                                <field name="name"/>
+                                                <field name="description"/>
+                                                <field name="ttype"/>
+                                                <field name="required"/>
+                                                <field name="relation" attrs="{'invisible': [('ttype', 'not in', ['many2many', 'many2one'])]}"/>
+                                                <field name="domain" attrs="{'invisible': [('ttype', 'not in', ['many2many', 'many2one'])]}"/>
+                                                <field name="many2many_model" attrs="{'invisible': [('ttype', '!=', 'many2many')]}"/>
+                                                <field name="column_1" attrs="{'invisible': [('ttype', '!=', 'many2many')]}"/>
+                                                <field name="column_2" attrs="{'invisible': [('ttype', '!=', 'many2many')]}"/>
+                                                <field name="selection_ids" attrs="{'invisible': [('ttype', '!=', 'selection')]}">
+                                                    <list editable="bottom">
+                                                        <field name="name"/>
+                                                        <field name="display"/>
+                                                    </list>
+                                                </field>
+                                                <field name="group"/>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Cấu hình quyền">
+                                <field name="access_ids">
+                                    <list>
+                                        <field name="name"/>
+                                        <field name="group_id"/>
+                                        <field name="perm_read"/>
+                                        <field name="perm_write"/>
+                                        <field name="perm_create"/>
+                                    </list>
+                                    <form string="setup_params_form">
+                                        <sheet>
+                                            <group>
+                                                <field name="name"/>
+                                                <field name="group_id"/>
+                                                <field name="perm_read"/>
+                                                <field name="perm_write"/>
+                                                <field name="perm_create"/>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="loilv_report_list_action" model="ir.actions.act_window">
+            <field name="name">Cấu hình báo cáo</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">loilv.report.list</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <record id="loilv_report_list_action_public" model="ir.actions.act_window">
+            <field name="name">Danh sách báo cáo</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">loilv.report.list</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('loilv_report_list_view_tree_public')})]"/>
+            <field name="view_mode">list</field>
+        </record>
+
+        <menuitem id="loilv_report_root" name="Báo cáo" sequence="80"/>
+
+        <menuitem id="loilv_setup_report" name="Cấu hình báo cáo" parent="loilv_report_root"
+                  action="loilv_report_list_action" sequence="1"/>
+
+        <menuitem id="loilv_setup_report_public_root"
+                  name="Danh sách báo cáo"
+                  parent="loilv_report_root"
+                  sequence="2"
+        />
+    </data>
+</odoo>
