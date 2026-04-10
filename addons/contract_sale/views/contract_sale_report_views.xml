@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Contract Sale Detail Report Wizard -->
+    <record id="view_contract_sale_detail_report_wizard_form" model="ir.ui.view">
+        <field name="name">contract.sale.detail.report.wizard.form</field>
+        <field name="model">contract.sale.detail.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Báo cáo chi tiết hợp đồng">
+                <group>
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="state"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_print_report" string="In báo cáo" type="object"
+                            class="oe_highlight"/>
+                    <button string="Hủy" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Contract Sale Detail Report Wizard Action -->
+    <record id="action_contract_sale_detail_report_wizard" model="ir.actions.act_window">
+        <field name="name">Báo cáo chi tiết hợp đồng</field>
+        <field name="res_model">contract.sale.detail.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- Report Menu -->
+    <menuitem id="menu_contract_sale_reports" name="Báo cáo"
+              parent="menu_contract_sale_root" sequence="10"/>
+    <menuitem id="menu_contract_sale_detail_report" name="Báo cáo chi tiết"
+              parent="menu_contract_sale_reports" action="action_contract_sale_detail_report_wizard"/>
+
+    <!-- Contract Sale Report Paperformat -->
+    <record id="paperformat_contract_sale" model="report.paperformat">
+        <field name="name">Báo cáo hợp đồng bán</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">40</field>
+        <field name="margin_bottom">20</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <!-- Contract Sale Report Action -->
+    <record id="action_report_contract_sale" model="ir.actions.report">
+        <field name="name">Báo cáo hợp đồng bán</field>
+        <field name="model">contract.sale</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">contract_sale.report_contract_sale</field>
+        <field name="report_file">contract_sale.report_contract_sale</field>
+        <field name="print_report_name">
+            'Hợp đồng - %s' % (object.name)
+        </field>
+        <field name="binding_model_id" ref="model_contract_sale"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_contract_sale"/>
+    </record>
+</odoo>

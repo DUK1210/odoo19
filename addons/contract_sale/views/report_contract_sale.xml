@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Contract Sale Report Template -->
+    <template id="report_contract_sale">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="contract">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 class="text-center">Báo cáo hợp đồng bán hàng</h2>
+                        <br/>
+                        <table class="table table-bordered">
+                            <tr>
+                                <td><strong>Số hợp đồng:</strong></td>
+                                <td><t t-esc="contract.name"/></td>
+                                <td><strong>Khách hàng:</strong></td>
+                                <td><t t-esc="contract.partner_id.name"/></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ngày bắt đầu:</strong></td>
+                                <td><t t-esc="contract.date_start"/></td>
+                                <td><strong>Ngày kết thúc:</strong></td>
+                                <td><t t-esc="contract.date_end"/></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Trạng thái:</strong></td>
+                                <td><t t-esc="contract.state"/></td>
+                                <td><strong>Tổng giá trị:</strong></td>
+                                <td><t t-esc="contract.total_amount" t-options="{'widget': 'monetary', 'display_currency': contract.currency_id}"/></td>
+                            </tr>
+                        </table>
+                        
+                        <h4>Chi tiết hợp đồng</h4>
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Sản phẩm</th>
+                                    <th class="text-end">SL hợp đồng</th>
+                                    <th class="text-end">SL đã bán</th>
+                                    <th class="text-end">SL còn lại</th>
+                                    <th class="text-end">SL đã mua</th>
+                                    <th class="text-end">SL đã nhận</th>
+                                    <th class="text-end">Tiến độ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="contract.line_ids" t-as="line">
+                                    <td><t t-esc="line.product_id.display_name"/></td>
+                                    <td class="text-end"><t t-esc="line.qty_contract"/></td>
+                                    <td class="text-end"><t t-esc="line.qty_sold"/></td>
+                                    <td class="text-end">
+                                        <span t-att-class="'text-danger' if line.qty_remaining &lt; (line.qty_contract * 0.2) else ''">
+                                            <t t-esc="line.qty_remaining"/>
+                                        </span>
+                                    </td>
+                                    <td class="text-end"><t t-esc="line.qty_purchased"/></td>
+                                    <td class="text-end"><t t-esc="line.qty_received"/></td>
+                                    <td class="text-end"><t t-esc="line.progress_percentage"/>%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h4>Đơn bán hàng liên kết</h4>
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Số đơn</th>
+                                    <th>Ngày</th>
+                                    <th>Giá trị</th>
+                                    <th>Trạng thái</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="contract.sale_order_ids" t-as="so">
+                                    <td><t t-esc="so.name"/></td>
+                                    <td><t t-esc="so.date_order"/></td>
+                                    <td><t t-esc="so.amount_total" t-options="{'widget': 'monetary', 'display_currency': so.currency_id}"/></td>
+                                    <td><t t-esc="so.state"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="mt-4">
+                            <h4>Tổng kết</h4>
+                            <p>
+                                <strong>Tổng đã bán:</strong> <t t-esc="contract.qty_sold"/><br/>
+                                <strong>Tổng còn lại:</strong> <t t-esc="contract.qty_remaining"/><br/>
+                                <strong>Tiến độ:</strong> <t t-esc="contract.progress_percentage"/>%
+                            </p>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
