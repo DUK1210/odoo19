@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_contract_sale_manager,contract.sale.manager,model_contract_sale,group_contract_sale_manager,1,1,1,1
+access_contract_sale_user,contract.sale.user,model_contract_sale,group_contract_sale_user,1,1,1,0
+access_contract_sale_line_manager,contract.sale.line.manager,model_contract_sale_line,group_contract_sale_manager,1,1,1,1
+access_contract_sale_line_user,contract.sale.line.user,model_contract_sale_line,group_contract_sale_user,1,1,1,0
+access_create_po_from_so_wizard_all,create.po.from.so.wizard.all,model_create_po_from_so_wizard,,1,1,1,1
+access_create_po_from_so_wizard_line_all,create.po.from.so.wizard.line.all,model_create_po_from_so_wizard_line,,1,1,1,1

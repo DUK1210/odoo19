@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Sale Order Form View Extension -->
+    <record id="view_order_form_inherit_contract" model="ir.ui.view">
+        <field name="name">sale.order.form.contract</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_create_purchase_order" string="Tạo đơn mua hàng" type="object"
+                        class="btn-secondary" invisible="state not in ['sale', 'done'] or purchase_order_count &gt; 0"/>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_purchase_orders" type="object" icon="fa-truck"
+                        class="oe_stat_button" invisible="purchase_order_count == 0">
+                    <field name="purchase_order_count" widget="statinfo" string="Đơn mua hàng"/>
+                </button>
+                <button name="action_view_receipts" type="object" icon="fa-dropbox"
+                        class="oe_stat_button" invisible="qty_received == 0">
+                    <field name="qty_received" widget="statinfo" string="Đã nhận"/>
+                </button>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="contract_id" options="{'no_create': True}"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/list/field[@name='product_uom_qty']" position="after">
+                <field name="qty_purchased" optional="show"/>
+                <field name="qty_remaining_to_purchase" optional="show"/>
+                <field name="qty_received" optional="hide"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Theo dõi mua hàng" invisible="not purchase_order_ids">
+                    <group>
+                        <group string="Tổng số lượng">
+                            <field name="qty_purchased"/>
+                            <field name="qty_remaining_to_purchase"/>
+                            <field name="qty_received"/>
+                        </group>
+                    </group>
+                    <field name="purchase_order_ids" readonly="1">
+                        <list>
+                            <field name="name"/>
+                            <field name="partner_id"/>
+                            <field name="date_order"/>
+                            <field name="state"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Sale Order List View Extension -->
+    <record id="view_order_list_inherit_contract" model="ir.ui.view">
+        <field name="name">sale.order.list.contract</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="contract_id" optional="show"/>
+                <field name="qty_purchased" optional="hide"/>
+                <field name="qty_received" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Sale Order Search View Extension -->
+    <record id="view_sales_order_filter_inherit_contract" model="ir.ui.view">
+        <field name="name">sale.order.search.contract</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <field name="contract_id"/>
+                <filter name="has_contract" string="Có hợp đồng" domain="[('contract_id', '!=', False)]"/>
+                <filter name="no_contract" string="Không có hợp đồng" domain="[('contract_id', '=', False)]"/>
+            </xpath>
+            <xpath expr="//group" position="inside">
+                <filter name="group_by_contract" string="Hợp đồng" context="{'group_by': 'contract_id'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
