@@ -1,0 +1,97 @@
+.wrapper-table-preview {
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.wrapper-table-preview #table-preview {
+    border: 1px solid #000f3d;
+    width: 100% !important;
+    overflow-x: scroll;
+}
+
+.wrapper-table-preview #table-preview tr {
+    border: 1px solid #000f3d;
+	cursor: pointer;
+    /*text-align: center;*/
+    white-space: nowrap;
+}
+
+.wrapper-table-preview #table-preview tr.active {
+    background-color: #7D5469FF;
+    color: white;
+}
+
+.wrapper-table-preview #table-preview tr th {
+    background: #7d5469;
+    border-left: 1px solid #000f3d;
+    border-right: 1px solid #000f3d;
+    color: #FFFFFF;
+    padding: 0 5px;
+}
+
+#table-preview tr td {
+    border: 1px solid #000f3d;
+    padding: 0 5px;
+}
+
+#table-preview tr td.dt-type-numeric {
+    text-align: right;
+}
+
+#table-preview th span.dt-column-order {
+    padding-right: 18px;
+    position: relative;
+    vertical-align: middle;
+}
+
+span.dt-column-order:before,
+span.dt-column-order:after {
+    border: 4px solid transparent;
+    content: "";
+    display: block;
+    height: 0;
+    right: 5px;
+    top: 50%;
+    position: absolute;
+    width: 0;
+}
+
+span.dt-column-order:before {
+    border-bottom-color: #ffffff;
+    margin-top: -9px;
+}
+
+span.dt-column-order:after {
+    border-top-color: #ffffff;
+    margin-top: 1px;
+}
+
+.file-input__input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-input__label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #fff;
+  padding: 5px;
+  background-color: #4245a8;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+}
+
+.file-input__label svg {
+  height: 16px;
+  margin-right: 4px;
+}
+
+.o_excel_upload {
+    margin-top: 5px;
+}

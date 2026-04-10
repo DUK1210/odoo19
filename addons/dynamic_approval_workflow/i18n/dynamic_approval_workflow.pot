@@ -1,0 +1,1387 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dynamic_approval_workflow
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20260217\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-20 10:43+0000\n"
+"PO-Revision-Date: 2026-03-20 10:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "  Escalated to <b>%(user)s</b>."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "%(d)s (%(n)s day(s) overdue)"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "%(d)s (today)"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "%(d)s (tomorrow)"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "(no reason provided)"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "(none)"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:mail.template,body_html:dynamic_approval_workflow.email_template_approval_request
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Dear {{ ctx.get('approver_name', 'Approver') }},\n"
+"    </p>\n"
+"    <br/>\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        An approval request requires your action:\n"
+"    </p>\n"
+"    <br/>\n"
+"    <table style=\"border: 1px solid #dee2e6; border-collapse: collapse; width: 100%; font-size: 13px;\">\n"
+"        <tr>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6; background: #f8f9fa; font-weight: bold; width: 35%;\">Reference</td>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6;\">{{ object.name }}</td>\n"
+"        </tr>\n"
+"        <tr>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6; background: #f8f9fa; font-weight: bold;\">Document</td>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6;\">{{ object.res_name }}</td>\n"
+"        </tr>\n"
+"        <tr>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6; background: #f8f9fa; font-weight: bold;\">Workflow</td>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6;\">{{ object.config_id.name }}</td>\n"
+"        </tr>\n"
+"        <tr>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6; background: #f8f9fa; font-weight: bold;\">Stage</td>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6;\">{{ object.current_stage_id.name }}</td>\n"
+"        </tr>\n"
+"        <tr>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6; background: #f8f9fa; font-weight: bold;\">Requested By</td>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6;\">{{ object.requester_id.name }}</td>\n"
+"        </tr>\n"
+"        {% if object.deadline %}\n"
+"        <tr>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6; background: #f8f9fa; font-weight: bold;\">Deadline</td>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6; color: #dc3545;\">{{ object.deadline }}</td>\n"
+"        </tr>\n"
+"        {% endif %}\n"
+"    </table>\n"
+"    <br/>\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Please log in to Odoo and review the request at your earliest convenience.\n"
+"    </p>\n"
+"    <br/>\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        <a href=\"/web#model=approval.request&amp;id={{ object.id }}&amp;view_type=form\" style=\"background-color: #875A7B; color: #fff; padding: 8px 16px;&#10;                  text-decoration: none; border-radius: 4px; font-size: 13px;\">\n"
+"            Review Request\n"
+"        </a>\n"
+"    </p>\n"
+"    <br/>\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 12px; color: #6c757d;\">\n"
+"        This is an automated notification from your Odoo system.\n"
+"    </p>\n"
+"</div>\n"
+"        "
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__approver_id
+msgid "Acted By"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__action
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__action
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_action_wizard_form
+msgid "Action"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:mail.template,subject:dynamic_approval_workflow.email_template_approval_request
+msgid "Action Required: Approval Request {{ object.name }}"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Actions"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__active
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_search
+msgid "Active"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+#: model:ir.ui.menu,name:dynamic_approval_workflow.menu_approval_requests
+msgid "All Requests"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "All stages approved by %(user)s. Document is now <b>Approved</b>."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_action_wizard_form
+msgid "Approval Action"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model,name:dynamic_approval_workflow.model_approval_action_wizard
+msgid "Approval Action Wizard"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__line_ids
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_form
+msgid "Approval History"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:res.groups,name:dynamic_approval_workflow.group_approval_manager
+msgid "Approval Manager"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model,name:dynamic_approval_workflow.model_approval_request
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__request_id
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__request_id
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_form
+msgid "Approval Request"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model,name:dynamic_approval_workflow.model_approval_request_line
+msgid "Approval Request History Line"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:mail.template,name:dynamic_approval_workflow.email_template_approval_request
+msgid "Approval Request: Notify Approver"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_mixin.py:0
+#: model:ir.actions.act_window,name:dynamic_approval_workflow.action_approval_request
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_mixin__approval_request_count
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_sale_order__approval_request_count
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_list
+msgid "Approval Requests"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_workflow_config.py:0
+msgid "Approval Requests — %s"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__stage_ids
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_form
+msgid "Approval Stages"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_mixin__approval_state
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_sale_order__approval_state
+msgid "Approval Status"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:res.groups,name:dynamic_approval_workflow.group_approval_user
+msgid "Approval User"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model,name:dynamic_approval_workflow.model_approval_workflow_config
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_form
+msgid "Approval Workflow Configuration"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_list
+msgid "Approval Workflow Configurations"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model,name:dynamic_approval_workflow.model_approval_mixin
+msgid "Approval Workflow Mixin"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model,name:dynamic_approval_workflow.model_approval_workflow_stage
+msgid "Approval Workflow Stage"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.actions.act_window,name:dynamic_approval_workflow.action_approval_workflow_config
+#: model:ir.ui.menu,name:dynamic_approval_workflow.menu_approval_workflow_config
+msgid "Approval Workflows"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "Approval request <b>%(ref)s</b> created for workflow <b>%(wf)s</b>."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.actions.server,name:dynamic_approval_workflow.ir_cron_escalate_approval_requests_ir_actions_server
+msgid "Approval: Escalate Overdue Requests"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.actions.server,name:dynamic_approval_workflow.action_server_submit_for_approval
+msgid "Approval: Submit for Approval (template)"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.ui.menu,name:dynamic_approval_workflow.menu_approval_root
+#: model:res.groups.privilege,name:dynamic_approval_workflow.res_groups_privilege_approval
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_order_form_dynamic_approval
+msgid "Approvals"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Approvals Distribution"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_form
+msgid "Approve"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_mixin__approval_state__approved
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_request__state__approved
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_request_line__action__approved
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__sale_order__approval_state__approved
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "Approved"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__approver_id
+msgid "Approver"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__field_name
+msgid "Approver Field"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__group_id
+msgid "Approver Group"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__approver_type
+msgid "Approver Type"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_search
+msgid "Archived"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_form
+msgid "Are you sure you want to approve this stage?"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_action_wizard_form
+msgid "Cancel"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__company_id
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__company_id
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_search
+msgid "Company"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.ui.menu,name:dynamic_approval_workflow.menu_approval_configuration
+msgid "Configuration"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_action_wizard_form
+msgid "Confirm"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "Could not load approval data. Please refresh the page."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.actions.act_window,help:dynamic_approval_workflow.action_approval_workflow_config
+msgid "Create your first approval workflow"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__create_uid
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__create_uid
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__create_uid
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__create_uid
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__create_date
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__create_date
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__create_date
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__create_date
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__current_approver_ids
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_form
+msgid "Current Approvers"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__current_stage_id
+msgid "Current Stage"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_mixin__approval_state
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_sale_order__approval_state
+msgid "Current state in the approval lifecycle."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Dashboard"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__date
+msgid "Date"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__deadline
+msgid "Deadline"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.actions.act_window,help:dynamic_approval_workflow.action_approval_workflow_config
+msgid ""
+"Define a workflow for any Odoo model and specify the stages\n"
+"                each document must pass through before being approved."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__display_name
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_mixin__display_name
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__display_name
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__display_name
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__display_name
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__display_name
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_sale_order__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_action_wizard__res_name
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__res_name
+msgid "Display name of the source document at submission time."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__res_name
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__res_name
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_form
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_list
+msgid "Document"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__res_id
+msgid "Document ID"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__res_model
+msgid "Document Model"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_mixin__approval_state__draft
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__sale_order__approval_state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "Due Today"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "Due Tomorrow"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.module.category,name:dynamic_approval_workflow.module_category_approval
+msgid "Dynamic Approvals"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_workflow_stage__approver_type__field
+msgid "Dynamic Field"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:approval.workflow.stage,name:dynamic_approval_workflow.approval_workflow_stage_template_dynamic_field_1
+msgid "Dynamic User from requester_id"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_list
+msgid "Escalation (days)"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__escalation_days
+msgid "Escalation After (Days)"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__escalation_user_id
+msgid "Escalation User"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_action_wizard__reason
+msgid ""
+"Explain why the request is being rejected or returned. This will be visible "
+"to the requester."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__domain
+msgid "Filter Domain"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:approval.workflow.stage,name:dynamic_approval_workflow.approval_workflow_stage_template_group_2
+msgid "Final Admin Approval"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_workflow_stage__approver_type
+msgid ""
+"How the approver(s) for this stage are determined:\n"
+"• Specific User — a fixed user you choose below.\n"
+"• User Group — all (or any) members of a security group.\n"
+"• Dynamic Field — a Many2one(res.users) field on the document."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__is_current_approver
+msgid "I Am Current Approver"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__id
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_mixin__id
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__id
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__id
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__id
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__id
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_sale_order__id
+msgid "ID"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__message_has_error
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__note
+msgid "Internal Notes"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_workflow_config.py:0
+msgid "Invalid domain expression: %s"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__write_uid
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__write_uid
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__write_uid
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__write_uid
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__write_date
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__write_date
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__write_date
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__write_date
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Loading your approvals..."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Loading…"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_workflow_config__sequence
+msgid ""
+"Lower sequences are evaluated first when multiple configs target the same "
+"model."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:approval.workflow.stage,name:dynamic_approval_workflow.approval_workflow_stage_template_single_user_1
+msgid "Manager Approval"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__model_id
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_search
+msgid "Model"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.ui.menu,name:dynamic_approval_workflow.menu_my_approvals_dashboard
+msgid "My Approvals"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.actions.client,name:dynamic_approval_workflow.action_my_approvals_dashboard
+msgid "My Approvals Dashboard"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "My Pending"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.actions.act_window,name:dynamic_approval_workflow.action_my_pending_approvals
+msgid "My Pending Approvals"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "My Requests"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "My Submitted Requests — %(state)s"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__name
+msgid "Name"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "New"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "No Deadline"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "No Group"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "No Requester"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "No Stage"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "No Workflow"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_mixin.py:0
+msgid "No active approval workflow is configured for model \"%s\"."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.actions.act_window,help:dynamic_approval_workflow.action_approval_request
+msgid "No approval requests yet"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "No records identified in context (active_model / active_ids)."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "No requests match your current search/group."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "No source document linked to this request."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_form
+msgid "Notes"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_workflow_config__escalation_days
+msgid ""
+"Number of calendar days after which a still-pending approval request is "
+"considered overdue and the escalation user is notified."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_mixin.py:0
+msgid "Only records in \"Draft\" or \"Returned\" state can be submitted for approval."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_form
+msgid "Open Document"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_workflow_config__domain
+msgid ""
+"Optional Odoo domain to restrict which records this workflow applies to.  "
+"Leave as '[]' (or empty) to match all records of the selected model.  "
+"Example: [('amount_total', '>=', 1000)]"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "Overdue"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Pending"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_mixin__approval_state__pending_approval
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_request__state__pending_approval
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__sale_order__approval_state__pending_approval
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "Pending Approval"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.ui.menu,name:dynamic_approval_workflow.menu_my_pending_approvals
+msgid "Pending My Action"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Pending My Approval"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/wizard/approval_action_wizard.py:0
+msgid "Please provide a reason before confirming."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "Provide a Reason"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_action_wizard_form
+msgid "Provide a clear reason…"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__reason
+msgid "Reason"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__reason
+msgid "Reason / Comment"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__name
+msgid "Reference"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_action_wizard__action__rejected
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_form
+msgid "Reject"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_mixin__approval_state__rejected
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_request__state__rejected
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_request_line__action__rejected
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__sale_order__approval_state__rejected
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "Rejected"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__request_name
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_form
+msgid "Request"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "Request <b>rejected</b> by %(user)s.  Reason: %(reason)s"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "Request <b>returned</b> to requester by %(user)s.  Reason: %(reason)s"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_action_wizard_form
+msgid "Request Details"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__requester_id
+msgid "Requested By"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "Requester"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__request_count
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_form
+msgid "Requests"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__require_all_group_members
+msgid "Require All Group Members"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Reset"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_action_wizard__action__returned
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_form
+msgid "Return to Requester"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_mixin__approval_state__returned
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_request__state__returned
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_request_line__action__returned
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__sale_order__approval_state__returned
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "Returned"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Review"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:approval.workflow.stage,name:dynamic_approval_workflow.approval_workflow_stage_template_group_1
+msgid "Review by Approval Managers"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:approval.workflow.stage,name:dynamic_approval_workflow.approval_workflow_stage_sale_order_default_1
+msgid "Sales Manager Approval"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model,name:dynamic_approval_workflow.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:approval.workflow.config,name:dynamic_approval_workflow.approval_workflow_config_sale_order_default
+msgid "Sales Order Approval"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Search"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "Search Approval Requests"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_search
+msgid "Search Configurations"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_form
+msgid "Select an Odoo model…"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__sequence
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_form
+msgid "Settings"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_workflow_stage__approver_type__user
+msgid "Specific User"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__current_stage_name
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__stage_id
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_list
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "Stage"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_workflow_stage.py:0
+msgid "Stage \"%s\": a field name is required."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_workflow_stage.py:0
+msgid "Stage \"%s\": a specific approver user is required."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_workflow_stage.py:0
+msgid "Stage \"%s\": an approver group is required."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid ""
+"Stage <b>%(prev)s</b> approved by %(user)s. Advanced to stage "
+"<b>%(next)s</b>."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__name
+msgid "Stage Name"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__stage_count
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_list
+msgid "Stages"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__state
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "Status"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.actions.act_window,help:dynamic_approval_workflow.action_approval_request
+msgid ""
+"Submit a document for approval from its form view.  All\n"
+"                requests created by approval workflows will appear here."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_order_form_dynamic_approval
+msgid "Submit for Approval"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/sale_order.py:0
+msgid "Submit the quotation for approval before confirming it. Order: \"%s\"."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Submitted By"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_form
+msgid "Target"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__model_name
+msgid "Technical Model Name"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_workflow_stage__field_name
+msgid ""
+"Technical name of a Many2one(res.users) field on the source model.  Example:"
+" user_id  |  responsible_id  |  reviewer_id"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:approval.workflow.config,name:dynamic_approval_workflow.approval_workflow_config_template_dynamic_field
+msgid "Template: Dynamic Field Approver"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:approval.workflow.config,name:dynamic_approval_workflow.approval_workflow_config_template_group
+msgid "Template: Group then Admin Approval"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:approval.workflow.config,name:dynamic_approval_workflow.approval_workflow_config_template_single_user
+msgid "Template: Single User Approval"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_workflow_config__model_id
+msgid "The Odoo model this workflow applies to."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_mixin.py:0
+msgid "The approval workflow \"%s\" has no stages defined."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "This is all approval activity generated across your requests."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/sale_order.py:0
+msgid ""
+"This quotation is still pending approval and cannot be confirmed yet. Order:"
+" \"%s\"."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/sale_order.py:0
+msgid ""
+"This quotation was rejected. Return it to draft/returned, edit, and resubmit"
+" for approval. Order: \"%s\"."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "This request is not in \"Pending Approval\" state."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__is_current_approver
+msgid "True when the current user can approve/reject this request."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/wizard/approval_action_wizard.py:0
+msgid "Unknown action: %s"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "Upcoming"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_workflow_stage__approver_id
+msgid "Used when Approver Type is 'Specific User'."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_workflow_stage__group_id
+msgid "Used when Approver Type is 'User Group'."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_workflow_stage__approver_type__group
+msgid "User Group"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_workflow_stage__escalation_user_id
+msgid ""
+"User who receives a chatter notification when the request exceeds the "
+"workflow's escalation deadline at this stage."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__current_approver_ids
+msgid "Users who can act on the current stage."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "View All"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_form
+msgid "View Requests"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_workflow_stage__require_all_group_members
+msgid ""
+"When enabled and Approver Type is 'User Group', every member of the group "
+"must approve before the stage is considered done. (Currently implemented as "
+"'any member can approve' when False.)"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__config_id
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_list
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "Workflow"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Workflow / Stage"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__config_id
+msgid "Workflow Config"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid ""
+"You are not authorised to approve or reject this request. Current approvers:"
+" %(approvers)s"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "You have no pending approvals right now."
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_form
+msgid "[] (matches all records)"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_form
+msgid "e.g. Purchase Order — High Value"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_mixin.py:0
+msgid "res_model"
+msgstr ""
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid ""
+"⚠️ This approval request has exceeded its deadline (%(deadline)s) and "
+"requires urgent attention."
+msgstr ""

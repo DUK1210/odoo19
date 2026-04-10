@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="status_group_view_tree" model="ir.ui.view">
+            <field name="name">status_group_view_tree</field>
+            <field name="model">status.group</field>
+            <field name="arch" type="xml">
+                <list string="status_group_tree" editable="top">
+                    <field name="model"/>
+                    <field name="key"/>
+                    <field name="value"/>
+                </list>
+            </field>
+        </record>
+
+
+        <record id="status_group_action" model="ir.actions.act_window">
+            <field name="name">Cấu hình mhóm trạng thái</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">status.group</field>
+            <field name="view_mode">list</field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="status_group_report" parent="loilv_report_advanced.loilv_report_root" action="status_group_action" sequence="3"/>
+
+    </data>
+</odoo>

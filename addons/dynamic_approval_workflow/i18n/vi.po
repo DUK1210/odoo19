@@ -1,0 +1,1489 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dynamic_approval_workflow
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20260217\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-20 10:43+0000\n"
+"PO-Revision-Date: 2026-03-20 10:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: Vietnamese\n"
+"Language: vi_VN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "  Escalated to <b>%(user)s</b>."
+msgstr "Đã chuyển lên <b>%(user)s</b>."
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "%(d)s (%(n)s day(s) overdue)"
+msgstr "%(d)s (%(n)s ngày quá hạn)"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "%(d)s (today)"
+msgstr "%(d)s (hôm nay)"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "%(d)s (tomorrow)"
+msgstr "%(d)s (ngày mai)"
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "(no reason provided)"
+msgstr "(không có lý do)"
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "(none)"
+msgstr "(không có)"
+
+#. module: dynamic_approval_workflow
+#: model:mail.template,body_html:dynamic_approval_workflow.email_template_approval_request
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Dear {{ ctx.get('approver_name', 'Approver') }},\n"
+"    </p>\n"
+"    <br/>\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        An approval request requires your action:\n"
+"    </p>\n"
+"    <br/>\n"
+"    <table style=\"border: 1px solid #dee2e6; border-collapse: collapse; width: 100%; font-size: 13px;\">\n"
+"        <tr>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6; background: #f8f9fa; font-weight: bold; width: 35%;\">Reference</td>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6;\">{{ object.name }}</td>\n"
+"        </tr>\n"
+"        <tr>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6; background: #f8f9fa; font-weight: bold;\">Document</td>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6;\">{{ object.res_name }}</td>\n"
+"        </tr>\n"
+"        <tr>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6; background: #f8f9fa; font-weight: bold;\">Workflow</td>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6;\">{{ object.config_id.name }}</td>\n"
+"        </tr>\n"
+"        <tr>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6; background: #f8f9fa; font-weight: bold;\">Stage</td>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6;\">{{ object.current_stage_id.name }}</td>\n"
+"        </tr>\n"
+"        <tr>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6; background: #f8f9fa; font-weight: bold;\">Requested By</td>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6;\">{{ object.requester_id.name }}</td>\n"
+"        </tr>\n"
+"        {% if object.deadline %}\n"
+"        <tr>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6; background: #f8f9fa; font-weight: bold;\">Deadline</td>\n"
+"            <td style=\"padding: 8px 12px; border: 1px solid #dee2e6; color: #dc3545;\">{{ object.deadline }}</td>\n"
+"        </tr>\n"
+"        {% endif %}\n"
+"    </table>\n"
+"    <br/>\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Please log in to Odoo and review the request at your earliest convenience.\n"
+"    </p>\n"
+"    <br/>\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        <a href=\"/web#model=approval.request&amp;id={{ object.id }}&amp;view_type=form\" style=\"background-color: #875A7B; color: #fff; padding: 8px 16px;&#10;                  text-decoration: none; border-radius: 4px; font-size: 13px;\">\n"
+"            Review Request\n"
+"        </a>\n"
+"    </p>\n"
+"    <br/>\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 12px; color: #6c757d;\">\n"
+"        This is an automated notification from your Odoo system.\n"
+"    </p>\n"
+"</div>\n"
+"        "
+msgstr ""
+"<div style=\"lề: 0px; phần đệm: 0px;\">\n"
+"    <p style=\"margin: 0px; phần đệm: 0px; cỡ chữ: 13px;\">\n"
+"        Kính gửi {{ ctx.get('approver_name', 'Approver') }},\n"
+"    </p>\n"
+"    <br/>\n"
+"    <p style=\"margin: 0px; phần đệm: 0px; cỡ chữ: 13px;\">\n"
+"        Yêu cầu phê duyệt yêu cầu hành động của bạn:\n"
+"    </p>\n"
+"    <br/>\n"
+"    <table style=\"border: 1px Solid #dee2e6; border-collapse: thu gọn; chiều rộng: 100%; cỡ chữ: 13px;\">\n"
+"        <tr>\n"
+"            <td style=\"padding: 8px 12px; đường viền: 1px Solid #dee2e6; nền: #f8f9fa; font-weight: đậm; chiều rộng: 35%;\">Tham khảo</td>\n"
+"            <td style=\"padding: 8px 12px; đường viền: 1px liền khối #dee2e6;\">{{ object.name }}</td>\n"
+"        </tr>\n"
+"        <tr>\n"
+"            <td style=\"padding: 8px 12px; đường viền: 1px Solid #dee2e6; nền: #f8f9fa; font-weight: đậm;\">Tài liệu</td>\n"
+"            <td style=\"padding: 8px 12px; đường viền: 1px liền khối #dee2e6;\">{{ object.res_name }}</td>\n"
+"        </tr>\n"
+"        <tr>\n"
+"            <td style=\"padding: 8px 12px; đường viền: 1px Solid #dee2e6; nền: #f8f9fa; font-weight: đậm;\">Quy trình làm việc</td>\n"
+"            <td style=\"padding: 8px 12px; đường viền: 1px liền khối #dee2e6;\">{{ object.config_id.name }}</td>\n"
+"        </tr>\n"
+"        <tr>\n"
+"            <td style=\"padding: 8px 12px; đường viền: 1px Solid #dee2e6; nền: #f8f9fa; font-weight: đậm;\">Sân khấu</td>\n"
+"            <td style=\"padding: 8px 12px; đường viền: 1px liền khối #dee2e6;\">{{ object.current_stage_id.name }}</td>\n"
+"        </tr>\n"
+"        <tr>\n"
+"            <td style=\"padding: 8px 12px; đường viền: 1px Solid #dee2e6; nền: #f8f9fa; font-weight: đậm;\">Được yêu cầu bởi</td>\n"
+"            <td style=\"padding: 8px 12px; đường viền: 1px liền khối #dee2e6;\">{{ object.requester_id.name }}</td>\n"
+"        </tr>\n"
+"        {% if object.deadline %}\n"
+"        <tr>\n"
+"            <td style=\"padding: 8px 12px; đường viền: 1px Solid #dee2e6; nền: #f8f9fa; font-weight: đậm;\">Hạn chót</td>\n"
+"            <td style=\"padding: 8px 12px; đường viền: 1px liền khối #dee2e6; màu: #dc3545;\">{{ object.deadline }}</td>\n"
+"        </tr>\n"
+"        {% endif %}\n"
+"    </bảng>\n"
+"    <br/>\n"
+"    <p style=\"margin: 0px; phần đệm: 0px; cỡ chữ: 13px;\">\n"
+"        Vui lòng đăng nhập vào Odoo và xem xét yêu cầu trong thời gian sớm nhất có thể.\n"
+"    </p>\n"
+"    <br/>\n"
+"    <p style=\"margin: 0px; phần đệm: 0px; cỡ chữ: 13px;\">\n"
+"        <a href=\"/web#model=approval.request&amp;id={{ object.id }}&amp;view_type=form\" style=\"background-color: #875A7B; color: #fff; đệm: 8px 16px;&#10; trang trí văn bản: none; bán kính đường viền: 4px; cỡ chữ: 13px;\">\n"
+"            Yêu cầu xem xét\n"
+"        </a>\n"
+"    </p>\n"
+"    <br/>\n"
+"    <p style=\"margin: 0px; phần đệm: 0px; cỡ chữ: 12px; màu: #6c757d;\">\n"
+"        Đây là thông báo tự động từ hệ thống Odoo của bạn.\n"
+"    </p>\n"
+"</div>"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__approver_id
+msgid "Acted By"
+msgstr "Người thực hiện"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__action
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__action
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_action_wizard_form
+msgid "Action"
+msgstr "Hành động"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__message_needaction
+msgid "Action Needed"
+msgstr "Cần hành động"
+
+#. module: dynamic_approval_workflow
+#: model:mail.template,subject:dynamic_approval_workflow.email_template_approval_request
+msgid "Action Required: Approval Request {{ object.name }}"
+msgstr "Yêu cầu xử lý: Yêu cầu phê duyệt {{ object.name }}"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Actions"
+msgstr "Thao tác"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__active
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_search
+msgid "Active"
+msgstr "Đang hoạt động"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__activity_ids
+msgid "Activities"
+msgstr "Hoạt động"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Trang trí ngoại lệ hoạt động"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__activity_state
+msgid "Activity State"
+msgstr "Trạng thái hoạt động"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Biểu tượng loại hoạt động"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+#: model:ir.ui.menu,name:dynamic_approval_workflow.menu_approval_requests
+msgid "All Requests"
+msgstr "Tất cả yêu cầu"
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "All stages approved by %(user)s. Document is now <b>Approved</b>."
+msgstr ""
+"Tất cả các giai đoạn được phê duyệt bởi %(user)s. Tài liệu hiện <b>Đã được "
+"phê duyệt</b>."
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_action_wizard_form
+msgid "Approval Action"
+msgstr "Hành động phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model,name:dynamic_approval_workflow.model_approval_action_wizard
+msgid "Approval Action Wizard"
+msgstr "Trình hướng dẫn hành động phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__line_ids
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_form
+msgid "Approval History"
+msgstr "Lịch sử phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model:res.groups,name:dynamic_approval_workflow.group_approval_manager
+msgid "Approval Manager"
+msgstr "Quản lý phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model,name:dynamic_approval_workflow.model_approval_request
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__request_id
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__request_id
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_form
+msgid "Approval Request"
+msgstr "Yêu cầu phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model,name:dynamic_approval_workflow.model_approval_request_line
+msgid "Approval Request History Line"
+msgstr "Dòng lịch sử yêu cầu phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model:mail.template,name:dynamic_approval_workflow.email_template_approval_request
+msgid "Approval Request: Notify Approver"
+msgstr "Yêu cầu phê duyệt: Thông báo người phê duyệt"
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_mixin.py:0
+#: model:ir.actions.act_window,name:dynamic_approval_workflow.action_approval_request
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_mixin__approval_request_count
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_sale_order__approval_request_count
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_list
+msgid "Approval Requests"
+msgstr "Yêu cầu phê duyệt"
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_workflow_config.py:0
+msgid "Approval Requests — %s"
+msgstr "Yêu cầu phê duyệt — %s"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__stage_ids
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_form
+msgid "Approval Stages"
+msgstr "Các bước phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_mixin__approval_state
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_sale_order__approval_state
+msgid "Approval Status"
+msgstr "Trạng thái phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model:res.groups,name:dynamic_approval_workflow.group_approval_user
+msgid "Approval User"
+msgstr "Người dùng phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model,name:dynamic_approval_workflow.model_approval_workflow_config
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_form
+msgid "Approval Workflow Configuration"
+msgstr "Cấu hình quy trình phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_list
+msgid "Approval Workflow Configurations"
+msgstr "Các cấu hình quy trình phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model,name:dynamic_approval_workflow.model_approval_mixin
+msgid "Approval Workflow Mixin"
+msgstr "Mixin quy trình phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model,name:dynamic_approval_workflow.model_approval_workflow_stage
+msgid "Approval Workflow Stage"
+msgstr "Giai đoạn quy trình phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model:ir.actions.act_window,name:dynamic_approval_workflow.action_approval_workflow_config
+#: model:ir.ui.menu,name:dynamic_approval_workflow.menu_approval_workflow_config
+msgid "Approval Workflows"
+msgstr "Quy trình phê duyệt"
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "Approval request <b>%(ref)s</b> created for workflow <b>%(wf)s</b>."
+msgstr ""
+"Đã tạo yêu cầu phê duyệt <b>%(ref)s</b> cho quy trình làm việc "
+"<b>%(wf)s</b>."
+
+#. module: dynamic_approval_workflow
+#: model:ir.actions.server,name:dynamic_approval_workflow.ir_cron_escalate_approval_requests_ir_actions_server
+msgid "Approval: Escalate Overdue Requests"
+msgstr "Phê duyệt: Nâng cao yêu cầu quá hạn"
+
+#. module: dynamic_approval_workflow
+#: model:ir.actions.server,name:dynamic_approval_workflow.action_server_submit_for_approval
+msgid "Approval: Submit for Approval (template)"
+msgstr "Phê duyệt: Gửi để phê duyệt (mẫu)"
+
+#. module: dynamic_approval_workflow
+#: model:ir.ui.menu,name:dynamic_approval_workflow.menu_approval_root
+#: model:res.groups.privilege,name:dynamic_approval_workflow.res_groups_privilege_approval
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_order_form_dynamic_approval
+msgid "Approvals"
+msgstr "Phê duyệt"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Approvals Distribution"
+msgstr "Phân bổ phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_form
+msgid "Approve"
+msgstr "Phê duyệt"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_mixin__approval_state__approved
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_request__state__approved
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_request_line__action__approved
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__sale_order__approval_state__approved
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "Approved"
+msgstr "Đã phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__approver_id
+msgid "Approver"
+msgstr "Người phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__field_name
+msgid "Approver Field"
+msgstr "Trường người phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__group_id
+msgid "Approver Group"
+msgstr "Nhóm phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__approver_type
+msgid "Approver Type"
+msgstr "Loại người phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_search
+msgid "Archived"
+msgstr "Đã lưu trữ"
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_form
+msgid "Are you sure you want to approve this stage?"
+msgstr "Bạn có chắc chắn muốn phê duyệt giai đoạn này không?"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__message_attachment_count
+msgid "Attachment Count"
+msgstr "Số tệp đính kèm"
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_action_wizard_form
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__company_id
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__company_id
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_search
+msgid "Company"
+msgstr "Công ty"
+
+#. module: dynamic_approval_workflow
+#: model:ir.ui.menu,name:dynamic_approval_workflow.menu_approval_configuration
+msgid "Configuration"
+msgstr "Cấu hình"
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_action_wizard_form
+msgid "Confirm"
+msgstr "Xác nhận"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "Could not load approval data. Please refresh the page."
+msgstr "Không thể tải dữ liệu phê duyệt. Vui lòng làm mới trang."
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.actions.act_window,help:dynamic_approval_workflow.action_approval_workflow_config
+msgid "Create your first approval workflow"
+msgstr "Tạo quy trình phê duyệt đầu tiên của bạn"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__create_uid
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__create_uid
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__create_uid
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__create_uid
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__create_date
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__create_date
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__create_date
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__create_date
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__create_date
+msgid "Created on"
+msgstr "Tạo vào"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__current_approver_ids
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_form
+msgid "Current Approvers"
+msgstr "Người phê duyệt hiện tại"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__current_stage_id
+msgid "Current Stage"
+msgstr "Bước hiện tại"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_mixin__approval_state
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_sale_order__approval_state
+msgid "Current state in the approval lifecycle."
+msgstr "Trạng thái hiện tại trong vòng đời phê duyệt."
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Dashboard"
+msgstr "Bảng điều khiển"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__date
+msgid "Date"
+msgstr "Ngày"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__deadline
+msgid "Deadline"
+msgstr "Hạn xử lý"
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.actions.act_window,help:dynamic_approval_workflow.action_approval_workflow_config
+msgid ""
+"Define a workflow for any Odoo model and specify the stages\n"
+"                each document must pass through before being approved."
+msgstr ""
+"Xác định quy trình làm việc cho bất kỳ mô hình Odoo nào và chỉ định các giai đoạn\n"
+"                mỗi tài liệu phải được thông qua trước khi được phê duyệt."
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__display_name
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_mixin__display_name
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__display_name
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__display_name
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__display_name
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__display_name
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_sale_order__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_action_wizard__res_name
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__res_name
+msgid "Display name of the source document at submission time."
+msgstr "Hiển thị tên của tài liệu nguồn tại thời điểm gửi."
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__res_name
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__res_name
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_form
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_list
+msgid "Document"
+msgstr "Chứng từ"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__res_id
+msgid "Document ID"
+msgstr "ID chứng từ"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__res_model
+msgid "Document Model"
+msgstr "Mô hình chứng từ"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_mixin__approval_state__draft
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__sale_order__approval_state__draft
+msgid "Draft"
+msgstr "Nháp"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "Due Today"
+msgstr "Đến hạn hôm nay"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "Due Tomorrow"
+msgstr "Đến hạn ngày mai"
+
+#. module: dynamic_approval_workflow
+#: model:ir.module.category,name:dynamic_approval_workflow.module_category_approval
+msgid "Dynamic Approvals"
+msgstr "Phê duyệt động"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_workflow_stage__approver_type__field
+msgid "Dynamic Field"
+msgstr "Trường động"
+
+#. module: dynamic_approval_workflow
+#: model:approval.workflow.stage,name:dynamic_approval_workflow.approval_workflow_stage_template_dynamic_field_1
+msgid "Dynamic User from requester_id"
+msgstr "Người dùng động từ requester_id"
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_list
+msgid "Escalation (days)"
+msgstr "Chuyển cấp (ngày)"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__escalation_days
+msgid "Escalation After (Days)"
+msgstr "Chuyển cấp sau (ngày)"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__escalation_user_id
+msgid "Escalation User"
+msgstr "Người nhận chuyển cấp"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_action_wizard__reason
+msgid ""
+"Explain why the request is being rejected or returned. This will be visible "
+"to the requester."
+msgstr ""
+"Giải thích lý do tại sao yêu cầu bị từ chối hoặc bị trả lại. Điều này sẽ "
+"được hiển thị cho người yêu cầu."
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__domain
+msgid "Filter Domain"
+msgstr "Miền lọc"
+
+#. module: dynamic_approval_workflow
+#: model:approval.workflow.stage,name:dynamic_approval_workflow.approval_workflow_stage_template_group_2
+msgid "Final Admin Approval"
+msgstr "Phê duyệt cuối bởi quản trị viên"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__message_follower_ids
+msgid "Followers"
+msgstr "Người theo dõi"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Người theo dõi (Đối tác)"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Phông chữ biểu tượng tuyệt vời, ví dụ: nhiệm vụ fa"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__has_message
+msgid "Has Message"
+msgstr "Có tin nhắn"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_workflow_stage__approver_type
+msgid ""
+"How the approver(s) for this stage are determined:\n"
+"• Specific User — a fixed user you choose below.\n"
+"• User Group — all (or any) members of a security group.\n"
+"• Dynamic Field — a Many2one(res.users) field on the document."
+msgstr ""
+"Cách xác định (những) người phê duyệt cho giai đoạn này:\n"
+"• Người dùng cụ thể — người dùng cố định bạn chọn bên dưới.\n"
+"• Nhóm người dùng — tất cả (hoặc bất kỳ) thành viên nào của nhóm bảo mật.\n"
+"• Trường động — trường Many2one(res.users) trên tài liệu."
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__is_current_approver
+msgid "I Am Current Approver"
+msgstr "Tôi là người phê duyệt hiện tại"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__id
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_mixin__id
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__id
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__id
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__id
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__id
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_sale_order__id
+msgid "ID"
+msgstr "NHẬN DẠNG"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__activity_exception_icon
+msgid "Icon"
+msgstr "Biểu tượng"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Biểu tượng để biểu thị một hoạt động ngoại lệ."
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Nếu được chọn, các tin nhắn mới cần bạn chú ý."
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__message_has_error
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Nếu được chọn, một số tin nhắn có lỗi gửi."
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__note
+msgid "Internal Notes"
+msgstr "Ghi chú nội bộ"
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_workflow_config.py:0
+msgid "Invalid domain expression: %s"
+msgstr "Biểu thức tên miền không hợp lệ: %s"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__message_is_follower
+msgid "Is Follower"
+msgstr "Là người theo dõi"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__write_uid
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__write_uid
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__write_uid
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__write_uid
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__write_date
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__write_date
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__write_date
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__write_date
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Loading your approvals..."
+msgstr "Đang tải phê duyệt của bạn..."
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Loading…"
+msgstr "Đang tải…"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_workflow_config__sequence
+msgid ""
+"Lower sequences are evaluated first when multiple configs target the same "
+"model."
+msgstr ""
+"Trình tự thấp hơn được đánh giá đầu tiên khi nhiều cấu hình nhắm mục tiêu "
+"vào cùng một mô hình."
+
+#. module: dynamic_approval_workflow
+#: model:approval.workflow.stage,name:dynamic_approval_workflow.approval_workflow_stage_template_single_user_1
+msgid "Manager Approval"
+msgstr "Phê duyệt của người quản lý"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__message_has_error
+msgid "Message Delivery error"
+msgstr "Lỗi gửi tin nhắn"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__message_ids
+msgid "Messages"
+msgstr "Tin nhắn"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__model_id
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_search
+msgid "Model"
+msgstr "Mô hình"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Hạn hoạt động của tôi"
+
+#. module: dynamic_approval_workflow
+#: model:ir.ui.menu,name:dynamic_approval_workflow.menu_my_approvals_dashboard
+msgid "My Approvals"
+msgstr "Phê duyệt của tôi"
+
+#. module: dynamic_approval_workflow
+#: model:ir.actions.client,name:dynamic_approval_workflow.action_my_approvals_dashboard
+msgid "My Approvals Dashboard"
+msgstr "Bảng điều khiển phê duyệt của tôi"
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "My Pending"
+msgstr "Việc đang chờ của tôi"
+
+#. module: dynamic_approval_workflow
+#: model:ir.actions.act_window,name:dynamic_approval_workflow.action_my_pending_approvals
+msgid "My Pending Approvals"
+msgstr "Phê duyệt đang chờ của tôi"
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "My Requests"
+msgstr "Yêu cầu của tôi"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "My Submitted Requests — %(state)s"
+msgstr "Yêu cầu đã gửi của tôi — %(state)s"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__name
+msgid "Name"
+msgstr "Tên"
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "New"
+msgstr "Mới"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Hạn hoạt động tiếp theo"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__activity_summary
+msgid "Next Activity Summary"
+msgstr "Tóm tắt hoạt động tiếp theo"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__activity_type_id
+msgid "Next Activity Type"
+msgstr "Loại hoạt động tiếp theo"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "No Deadline"
+msgstr "Không có hạn"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "No Group"
+msgstr "Không có nhóm"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "No Requester"
+msgstr "Không có người yêu cầu"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "No Stage"
+msgstr "Không có bước"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "No Workflow"
+msgstr "Không có quy trình"
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_mixin.py:0
+msgid "No active approval workflow is configured for model \"%s\"."
+msgstr ""
+"Không có quy trình phê duyệt hiện hoạt nào được định cấu hình cho mô hình "
+"\"%s\"."
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.actions.act_window,help:dynamic_approval_workflow.action_approval_request
+msgid "No approval requests yet"
+msgstr "Chưa có yêu cầu phê duyệt"
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "No records identified in context (active_model / active_ids)."
+msgstr ""
+"Không xác định được bản ghi trong ngữ cảnh (active_model / active_ids)."
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "No requests match your current search/group."
+msgstr "Không có yêu cầu nào phù hợp với tìm kiếm/nhóm hiện tại của bạn."
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "No source document linked to this request."
+msgstr "Không có chứng từ nguồn liên kết với yêu cầu này."
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_form
+msgid "Notes"
+msgstr "Ghi chú"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Số hành động"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_workflow_config__escalation_days
+msgid ""
+"Number of calendar days after which a still-pending approval request is "
+"considered overdue and the escalation user is notified."
+msgstr ""
+"Số ngày theo lịch mà sau đó yêu cầu phê duyệt vẫn đang chờ xử lý được coi là"
+" quá hạn và người dùng báo cáo sẽ được thông báo."
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__message_has_error_counter
+msgid "Number of errors"
+msgstr "Số lỗi"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Số tin nhắn cần xử lý"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Số tin nhắn có lỗi gửi"
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_mixin.py:0
+msgid "Only records in \"Draft\" or \"Returned\" state can be submitted for approval."
+msgstr ""
+"Chỉ những hồ sơ ở trạng thái \"Bản nháp\" hoặc \"Đã trả lại\" mới có thể "
+"được gửi để phê duyệt."
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_form
+msgid "Open Document"
+msgstr "Mở chứng từ"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_workflow_config__domain
+msgid ""
+"Optional Odoo domain to restrict which records this workflow applies to.  "
+"Leave as '[]' (or empty) to match all records of the selected model.  "
+"Example: [('amount_total', '>=', 1000)]"
+msgstr ""
+"Miền Odoo tùy chọn để hạn chế những bản ghi nào áp dụng quy trình làm việc "
+"này.  Để lại là '[]' (hoặc trống) để khớp với tất cả các bản ghi của mô hình"
+" đã chọn.  Ví dụ: [('amount_total', '>=', 1000)]"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "Overdue"
+msgstr "Quá hạn"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Pending"
+msgstr "Chưa giải quyết"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_mixin__approval_state__pending_approval
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_request__state__pending_approval
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__sale_order__approval_state__pending_approval
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "Pending Approval"
+msgstr "Chờ phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model:ir.ui.menu,name:dynamic_approval_workflow.menu_my_pending_approvals
+msgid "Pending My Action"
+msgstr "Đang chờ tôi xử lý"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Pending My Approval"
+msgstr "Đang chờ tôi phê duyệt"
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/wizard/approval_action_wizard.py:0
+msgid "Please provide a reason before confirming."
+msgstr "Vui lòng nhập lý do trước khi xác nhận."
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "Provide a Reason"
+msgstr "Nhập lý do"
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_action_wizard_form
+msgid "Provide a clear reason…"
+msgstr "Đưa ra lý do rõ ràng…"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__rating_ids
+msgid "Ratings"
+msgstr "Đánh giá"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__reason
+msgid "Reason"
+msgstr "Lý do"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__reason
+msgid "Reason / Comment"
+msgstr "Lý do / Ghi chú"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__name
+msgid "Reference"
+msgstr "Mã tham chiếu"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_action_wizard__action__rejected
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_form
+msgid "Reject"
+msgstr "Từ chối"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_mixin__approval_state__rejected
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_request__state__rejected
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_request_line__action__rejected
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__sale_order__approval_state__rejected
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "Rejected"
+msgstr "Đã từ chối"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__request_name
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_form
+msgid "Request"
+msgstr "Lời yêu cầu"
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "Request <b>rejected</b> by %(user)s.  Reason: %(reason)s"
+msgstr "Yêu cầu <b>bị từ chối</b> bởi %(user)s.  Lý do: %(reason)s"
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "Request <b>returned</b> to requester by %(user)s.  Reason: %(reason)s"
+msgstr ""
+"Yêu cầu <b>được trả lại</b> cho người yêu cầu bởi %(user)s.  Lý do: "
+"%(reason)s"
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_action_wizard_form
+msgid "Request Details"
+msgstr "Chi tiết yêu cầu"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__requester_id
+msgid "Requested By"
+msgstr "Người yêu cầu"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "Requester"
+msgstr "Người yêu cầu"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__request_count
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_form
+msgid "Requests"
+msgstr "Yêu cầu"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__require_all_group_members
+msgid "Require All Group Members"
+msgstr "Yêu cầu tất cả thành viên nhóm"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Reset"
+msgstr "Đặt lại"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__activity_user_id
+msgid "Responsible User"
+msgstr "Người dùng có trách nhiệm"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_action_wizard__action__returned
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_form
+msgid "Return to Requester"
+msgstr "Trả lại cho người yêu cầu"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_mixin__approval_state__returned
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_request__state__returned
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_request_line__action__returned
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__sale_order__approval_state__returned
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "Returned"
+msgstr "Trả lại"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Review"
+msgstr "Ôn tập"
+
+#. module: dynamic_approval_workflow
+#: model:approval.workflow.stage,name:dynamic_approval_workflow.approval_workflow_stage_template_group_1
+msgid "Review by Approval Managers"
+msgstr "Đánh giá của người quản lý phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Lỗi gửi SMS"
+
+#. module: dynamic_approval_workflow
+#: model:approval.workflow.stage,name:dynamic_approval_workflow.approval_workflow_stage_sale_order_default_1
+msgid "Sales Manager Approval"
+msgstr "Phê duyệt của người quản lý bán hàng"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model,name:dynamic_approval_workflow.model_sale_order
+msgid "Sales Order"
+msgstr "Lệnh bán hàng"
+
+#. module: dynamic_approval_workflow
+#: model:approval.workflow.config,name:dynamic_approval_workflow.approval_workflow_config_sale_order_default
+msgid "Sales Order Approval"
+msgstr "Phê duyệt đơn bán hàng"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Search"
+msgstr "Tìm kiếm"
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "Search Approval Requests"
+msgstr "Tìm kiếm yêu cầu phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_search
+msgid "Search Configurations"
+msgstr "Tìm kiếm cấu hình"
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_form
+msgid "Select an Odoo model…"
+msgstr "Chọn một mô hình Odoo…"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__sequence
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__sequence
+msgid "Sequence"
+msgstr "Thứ tự"
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_form
+msgid "Settings"
+msgstr "Thiết lập"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_workflow_stage__approver_type__user
+msgid "Specific User"
+msgstr "Người dùng cụ thể"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_action_wizard__current_stage_name
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request_line__stage_id
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_list
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "Stage"
+msgstr "Sân khấu"
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_workflow_stage.py:0
+msgid "Stage \"%s\": a field name is required."
+msgstr "Giai đoạn \"%s\": tên trường là bắt buộc."
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_workflow_stage.py:0
+msgid "Stage \"%s\": a specific approver user is required."
+msgstr "Giai đoạn \"%s\": cần có người phê duyệt cụ thể."
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_workflow_stage.py:0
+msgid "Stage \"%s\": an approver group is required."
+msgstr "Giai đoạn \"%s\": cần có nhóm phê duyệt."
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid ""
+"Stage <b>%(prev)s</b> approved by %(user)s. Advanced to stage "
+"<b>%(next)s</b>."
+msgstr ""
+"Giai đoạn <b>%(prev)s</b> được %(user)s phê duyệt. Tiến lên giai đoạn "
+"<b>%(next)s</b>."
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__name
+msgid "Stage Name"
+msgstr "Tên bước"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__stage_count
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_list
+msgid "Stages"
+msgstr "Các bước"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__state
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Trạng thái dựa trên hoạt động\n"
+"Quá hạn: Đã qua ngày đáo hạn\n"
+"Hôm nay: Ngày hoạt động là hôm nay\n"
+"Dự kiến: Hoạt động sắp tới."
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.actions.act_window,help:dynamic_approval_workflow.action_approval_request
+msgid ""
+"Submit a document for approval from its form view.  All\n"
+"                requests created by approval workflows will appear here."
+msgstr ""
+"Gửi tài liệu để phê duyệt từ chế độ xem biểu mẫu của nó.  Tất cả\n"
+"                các yêu cầu được tạo bởi quy trình phê duyệt sẽ xuất hiện ở đây."
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_order_form_dynamic_approval
+msgid "Submit for Approval"
+msgstr "Gửi phê duyệt"
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/sale_order.py:0
+msgid "Submit the quotation for approval before confirming it. Order: \"%s\"."
+msgstr "Gửi báo giá để phê duyệt trước khi xác nhận. Thứ tự: \"%s\"."
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Submitted By"
+msgstr "Gửi bởi"
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_form
+msgid "Target"
+msgstr "Đối tượng"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_config__model_name
+msgid "Technical Model Name"
+msgstr "Tên kỹ thuật mô hình"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_workflow_stage__field_name
+msgid ""
+"Technical name of a Many2one(res.users) field on the source model.  Example:"
+" user_id  |  responsible_id  |  reviewer_id"
+msgstr ""
+"Tên kỹ thuật của trường Many2one(res.users) trên mô hình nguồn.  Ví dụ: "
+"user_id |  chịu trách nhiệm_id |  người đánh giá_id"
+
+#. module: dynamic_approval_workflow
+#: model:approval.workflow.config,name:dynamic_approval_workflow.approval_workflow_config_template_dynamic_field
+msgid "Template: Dynamic Field Approver"
+msgstr "Mẫu: Người phê duyệt theo trường động"
+
+#. module: dynamic_approval_workflow
+#: model:approval.workflow.config,name:dynamic_approval_workflow.approval_workflow_config_template_group
+msgid "Template: Group then Admin Approval"
+msgstr "Mẫu: Nhóm rồi quản trị viên phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model:approval.workflow.config,name:dynamic_approval_workflow.approval_workflow_config_template_single_user
+msgid "Template: Single User Approval"
+msgstr "Mẫu: Một người dùng phê duyệt"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_workflow_config__model_id
+msgid "The Odoo model this workflow applies to."
+msgstr "Mô hình Odoo mà quy trình làm việc này áp dụng."
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_mixin.py:0
+msgid "The approval workflow \"%s\" has no stages defined."
+msgstr "Quy trình phê duyệt \"%s\" không có giai đoạn nào được xác định."
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "This is all approval activity generated across your requests."
+msgstr "Đây là tất cả hoạt động phê duyệt được tạo theo yêu cầu của bạn."
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/sale_order.py:0
+msgid ""
+"This quotation is still pending approval and cannot be confirmed yet. Order:"
+" \"%s\"."
+msgstr ""
+"Báo giá này vẫn đang chờ phê duyệt và chưa thể được xác nhận. Thứ tự: "
+"\"%s\"."
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/sale_order.py:0
+msgid ""
+"This quotation was rejected. Return it to draft/returned, edit, and resubmit"
+" for approval. Order: \"%s\"."
+msgstr ""
+"Báo giá này đã bị từ chối. Đưa nó về bản nháp/trả lại, chỉnh sửa và gửi lại "
+"để phê duyệt. Thứ tự: \"%s\"."
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid "This request is not in \"Pending Approval\" state."
+msgstr "Yêu cầu này không ở trạng thái \"Đang chờ phê duyệt\"."
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__is_current_approver
+msgid "True when the current user can approve/reject this request."
+msgstr "Đúng khi người dùng hiện tại có thể phê duyệt/từ chối yêu cầu này."
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Loại hoạt động ngoại lệ được ghi lại."
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/wizard/approval_action_wizard.py:0
+msgid "Unknown action: %s"
+msgstr "Hành động không hợp lệ: %s"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/js/my_approvals_dashboard.js:0
+msgid "Upcoming"
+msgstr "Sắp tới"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_workflow_stage__approver_id
+msgid "Used when Approver Type is 'Specific User'."
+msgstr "Được sử dụng khi Loại người phê duyệt là 'Người dùng cụ thể'."
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_workflow_stage__group_id
+msgid "Used when Approver Type is 'User Group'."
+msgstr "Được sử dụng khi Loại người phê duyệt là 'Nhóm người dùng'."
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields.selection,name:dynamic_approval_workflow.selection__approval_workflow_stage__approver_type__group
+msgid "User Group"
+msgstr "Nhóm người dùng"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_workflow_stage__escalation_user_id
+msgid ""
+"User who receives a chatter notification when the request exceeds the "
+"workflow's escalation deadline at this stage."
+msgstr ""
+"Người dùng nhận được thông báo trò chuyện khi yêu cầu vượt quá thời hạn báo "
+"cáo của quy trình làm việc ở giai đoạn này."
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__current_approver_ids
+msgid "Users who can act on the current stage."
+msgstr "Người dùng có thể hành động trên sân khấu hiện tại."
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "View All"
+msgstr "Xem tất cả"
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_form
+msgid "View Requests"
+msgstr "Xem yêu cầu"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__website_message_ids
+msgid "Website Messages"
+msgstr "Tin nhắn trang web"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_request__website_message_ids
+msgid "Website communication history"
+msgstr "Lịch sử trao đổi trên website"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,help:dynamic_approval_workflow.field_approval_workflow_stage__require_all_group_members
+msgid ""
+"When enabled and Approver Type is 'User Group', every member of the group "
+"must approve before the stage is considered done. (Currently implemented as "
+"'any member can approve' when False.)"
+msgstr ""
+"Khi được bật và Loại người phê duyệt là 'Nhóm người dùng', mọi thành viên "
+"trong nhóm phải phê duyệt trước khi giai đoạn được coi là hoàn tất. (Hiện "
+"được triển khai là 'bất kỳ thành viên nào cũng có thể phê duyệt' khi Sai.)"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_request__config_id
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_list
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_request_search
+msgid "Workflow"
+msgstr "Quy trình"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "Workflow / Stage"
+msgstr "Quy trình / Bước"
+
+#. module: dynamic_approval_workflow
+#: model:ir.model.fields,field_description:dynamic_approval_workflow.field_approval_workflow_stage__config_id
+msgid "Workflow Config"
+msgstr "Cấu hình quy trình"
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid ""
+"You are not authorised to approve or reject this request. Current approvers:"
+" %(approvers)s"
+msgstr ""
+"Bạn không được phép phê duyệt hoặc từ chối yêu cầu này. Người phê duyệt hiện"
+" tại: %(approvers)s"
+
+#. module: dynamic_approval_workflow
+#. odoo-javascript
+#: code:addons/dynamic_approval_workflow/static/src/xml/my_approvals_dashboard.xml:0
+msgid "You have no pending approvals right now."
+msgstr "Hiện tại bạn không có phê duyệt nào đang chờ xử lý."
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_form
+msgid "[] (matches all records)"
+msgstr "[] (khớp tất cả bản ghi)"
+
+#. module: dynamic_approval_workflow
+#: model_terms:ir.ui.view,arch_db:dynamic_approval_workflow.view_approval_workflow_config_form
+msgid "e.g. Purchase Order — High Value"
+msgstr "ví dụ. Đơn đặt hàng - Giá trị cao"
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_mixin.py:0
+msgid "res_model"
+msgstr "res_model"
+
+#. module: dynamic_approval_workflow
+#. odoo-python
+#: code:addons/dynamic_approval_workflow/models/approval_request.py:0
+msgid ""
+"⚠️ This approval request has exceeded its deadline (%(deadline)s) and "
+"requires urgent attention."
+msgstr ""
+"⚠️ Yêu cầu phê duyệt này đã vượt quá thời hạn (%(deadline)s) và cần được xử "
+"lý khẩn cấp."
